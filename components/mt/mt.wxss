@@ -1,0 +1,33 @@
+/* @import "../../icon/iconfont_6.wxss"; */
+
+.mt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-box, .text-box {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  height: calc(50% - 2.5px);
+  background: #AAA;
+}
+
+.textarea, .text {
+  width: 100%;
+  height: 100%;
+
+  background: rebeccapurple;
+}
+
+.icon-guanbi {
+  position: fixed;
+  right: 10px;
+  z-index: 1;
+  display: flex;
+  border-radius: 50%;
+}
+

@@ -1,0 +1,10 @@
+<view class="mt">
+  <view class="input-box">
+    <icon class="iconfont icon-guanbi" catch:tap="clearTextarea"></icon>
+    <textarea class="textarea" maxlength="2000"></textarea>
+  </view>
+
+  <view class="text-box">
+    <text class="text"></text>
+  </view>
+</view>

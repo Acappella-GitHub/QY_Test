@@ -1,37 +1,23 @@
 <view class="ocr">
-  <view class="photo-box">
-    <icon wx:if="{{display}}" catch:tap="photograph" class="iconfont icon-photograph"></icon>
+  <view class="menu">
+    <picker class="selector" mode="multiSelector">英文 → 中文</picker>
+    <button class="translate-btn" size="mini" type="primary">翻译</button>
+  </view>
 
-    <view wx:if="{{!display}}" class="image-box">
-      <view class="tool-bar">
-        <icon catch:tap="refreshImage" class="iconfont icon-shuaxin"></icon>
-        <icon catch:tap="closeImage" class="iconfont icon-guanbi"></icon>
-      </view>
-      <scroll-view class="roll"><image mode="scaleToFill" src="{{image_path}}" class="image"></image></scroll-view>
-    </view>
+  <view class="image-box">
+    <icon wx:if="{{display}}" class="iconfont icon-photograph" catch:tap="chooseImage"></icon>
+
+    <block wx:else>
+      <icon class="iconfont icon-guanbi" catch:tap="closeImage"></icon>
+      <scroll-view class="scroll" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
+        <image class="image" src="{{image_path}}" mode="top left" style="width:{{image_width}}; height:{{image_height}};"></image>
+      </scroll-view>
+    </block>
   </view>
 
   <view class="text-box">
-    <scroll-view class="roll"><text class="text">{{text_result}}</text></scroll-view>
+    <scroll-view class="scroll" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
+      <text class="text">{{text_result}}</text>
+    </scroll-view>
   </view>
-
-
-  <!-- <view class="photo">
-    <icon catch:tap="photograph" class="iconfont icon-photograph"></icon>
-
-    <view>
-      <view>
-        <icon></icon>
-        <icon></icon>
-      </view>
-
-      <scroll-view id="photo" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="touchStart" catch:scroll="syncRoll"><image></image></scroll-view>
-    </view> 
-
-    
-  </view>
-
-  <view class="text">
-    <scroll-view id="text" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="touchStart" catch:scroll="syncRoll" class="identify-result"><text></text></scroll-view>
-  </view> -->
 </view>

@@ -1,19 +1,12 @@
 <view class="container">
-  <view class="menu">
-    <icon class="iconfont icon-caidan"></icon>
+  <icon class="iconfont icon-caidan"></icon>
 
-    <picker mode="multiSelector" class="selector">英文 → 中文</picker>
-
-    <button size="mini" type="primary" class="translate-btn">翻译</button>
-  </view>
-
-  <view class="main">
-    <ocr></ocr>
-  </view>
+  <ocr></ocr>
+  <!-- <mt></mt> -->
 
   <view class="tab">
     <icon class="iconfont icon-xiangji"></icon>
-    <icon class="iconfont icon-icon"></icon>
+    <icon class="iconfont icon-luyin"></icon>
     <icon class="iconfont icon-fanyi"></icon>
   </view>
 </view>
