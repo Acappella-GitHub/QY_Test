@@ -2,7 +2,8 @@
   <icon class="iconfont icon-caidan"></icon>
 
   <!-- <ocr></ocr> -->
-  <mt></mt>
+  <asr></asr>
+  <!-- <mt></mt> -->
 
   <view class="tab">
     <icon class="iconfont icon-xiangji"></icon>

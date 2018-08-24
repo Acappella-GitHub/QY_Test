@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "ocr": "/components/ocr/ocr",
-    "mt": "/components/mt/mt"
+    "mt": "/components/mt/mt",
+    "asr": "/components/asr/asr"
   }
 }
