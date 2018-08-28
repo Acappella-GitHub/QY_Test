@@ -1,3 +1,5 @@
+import Tool from 'Tool.js'
+
 const app = getApp();
 
 Component({
@@ -14,7 +16,7 @@ Component({
 
   methods: {
     chooseImage: function (event) {
-      chooseImage(this);
+      Tool.chooseImage();
     },
 
     closeImage: function (event) {
@@ -31,24 +33,24 @@ Component({
   }
 })
 
-function chooseImage(that) {
-  wx.chooseImage({
-    count: 1,
-    success: function (result) {
-      wx.getImageInfo({
-        src: result.tempFilePaths[0],
-        success: function (result) {
-          that.setData({
-            display: false,
-            image_path: result.path,
-            image_width: result.width + "px",
-            image_height: result.height + "px"
-          })
-        }
-      })
-    }
-  })
-}
+// function chooseImage(that) {
+//   wx.chooseImage({
+//     count: 1,
+//     success: function (result) {
+//       wx.getImageInfo({
+//         src: result.tempFilePaths[0],
+//         success: function (result) {
+//           that.setData({
+//             display: false,
+//             image_path: result.path,
+//             image_width: result.width + "px",
+//             image_height: result.height + "px"
+//           })
+//         }
+//       })
+//     }
+//   })
+// }
 
 function closeImage(that) {
   that.setData({
