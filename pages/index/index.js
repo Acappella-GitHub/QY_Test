@@ -13,6 +13,6 @@ Page({
     console.log(app.globalData.BAIDU_ASR);
 
 
-    MT.translate("fuck you!", "en", "zh");
+    MT.translate("fuck!", "en", "zh");
   }
 })
