@@ -1,4 +1,7 @@
 .asr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: calc(100% - 48px);
 }
@@ -15,3 +18,17 @@
   line-height: 44px;
 }
 
+.speech-box {
+  box-sizing: border-box;
+  margin: 5px 0 5px 0;
+  width: calc(100% - 10px);
+  height: calc(100% - 103px);
+
+  background: #EFEFEF;
+}
+
+.recording-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 90px;
+}
