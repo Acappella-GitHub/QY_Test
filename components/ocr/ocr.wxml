@@ -1,14 +1,14 @@
 <view class="ocr">
   <view class="menu">
-    <picker class="selector" mode="multiSelector">英文 → 中文</picker>
-    <button class="translate-btn" size="mini" type="primary">翻译</button>
+    <picker class="multi-selector" mode="multiSelector">英文 → 中文</picker>
+    <button class="translate-button" size="mini" type="primary">翻译</button>
   </view>
 
   <view class="image-box">
-    <icon wx:if="{{display}}" class="iconfont icon-photograph" catch:tap="chooseImage"></icon>
+    <icon wx:if="{{display}}" class="iconfont choose-image-icon" catch:tap="chooseImage"></icon>
 
     <block wx:else>
-      <icon class="iconfont icon-guanbi" catch:tap="closeImage"></icon>
+      <icon class="iconfont close-image-icon" catch:tap="closeImage"></icon>
       <scroll-view class="scroll" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
         <image class="image" src="{{image_path}}" mode="top left" style="width:{{image_width}}; height:{{image_height}};"></image>
       </scroll-view>
