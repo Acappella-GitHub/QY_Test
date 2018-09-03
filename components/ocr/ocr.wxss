@@ -38,7 +38,7 @@
   height: 100%;
 }
 
-.close-image-icon {
+.clear-image-icon {
   display: flex;
   z-index: 1;
   position: fixed;
@@ -46,7 +46,7 @@
   border-radius: 50%;
 }
 
-.scroll {
+.scroll-view {
   width: 100%;
   height: 100%;
 }
@@ -64,7 +64,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-close-image-icon:before {
+clear-image-icon:before {
 
 }
 

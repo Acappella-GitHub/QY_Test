@@ -8,15 +8,15 @@
     <icon wx:if="{{display}}" class="iconfont choose-image-icon" catch:tap="chooseImage"></icon>
 
     <block wx:else>
-      <icon class="iconfont close-image-icon" catch:tap="closeImage"></icon>
-      <scroll-view class="scroll" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
+      <icon class="iconfont clear-image-icon" catch:tap="clearImage"></icon>
+      <scroll-view class="scroll-view" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
         <image class="image" src="{{image_path}}" mode="top left" style="width:{{image_width}}; height:{{image_height}};"></image>
       </scroll-view>
     </block>
   </view>
 
   <view class="text-box">
-    <scroll-view class="scroll" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
+    <scroll-view class="scroll-view" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
       <text class="text">{{text_result}}</text>
     </scroll-view>
   </view>

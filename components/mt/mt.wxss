@@ -4,18 +4,19 @@
 }
 
 .menu {
+  display: flex;
   width: 100%;
   height: 44px;
-  display: flex;
   background: #EFEFEF;
 }
 
-.selector {
+.multi-selector {
   margin: 0 auto;
+  font-size: 14px;
   line-height: 44px;
 }
 
-.translate-btn {
+.translate-button {
   align-self: center;
   position: fixed;
   right: 0;
@@ -23,29 +24,13 @@
 }
 
 .input-box, .text-box {
-  box-sizing: border-box;
   margin: 5px 0 0 5px;
   width: calc(100% - 10px);
   height: calc((100% - 44px) / 2 - 7.5px);
   background: #CCC;
 }
 
-.icon-guanbi {
-  position: fixed;
-  right: 10px;
-  z-index: 1;
-  display: flex;
-  border-radius: 50%;
-}
-
-.textarea, .text {
-  width: 100%;
-  height: 100%;
-
-  background: rebeccapurple;
-}
-
-.icon-guanbi {
+.clear-textarea-icon {
   position: fixed;
   right: 10px;
   z-index: 1;
