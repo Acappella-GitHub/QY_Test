@@ -1,15 +1,15 @@
 <view class="mt">
   <view class="menu">
     <picker class="multi-selector" mode="multiSelector">英文 → 中文</picker>
-    <button class="translate-button" size="mini" type="primary">翻译</button>
+    <button class="translate-button" size="mini" type="primary" catch:tap="translate">翻译</button>
   </view>
 
   <view class="input-box">
     <icon class="iconfont clear-textarea-icon" catch:tap="clearTextarea"></icon>
-    <textarea class="textarea" maxlength="2000"></textarea>
+    <textarea id="textarea" class="textarea" maxlength="2000"></textarea>
   </view>
 
   <view class="text-box">
-    <text class="text"></text>
+    <text class="text">{{translate_text}}</text>
   </view>
 </view>

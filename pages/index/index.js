@@ -1,6 +1,4 @@
 import Token from '../../utils/Token/Token.js'
-import MT from '../../utils/MT/MT.js'
-
 
 const app = getApp();
 
@@ -11,8 +9,5 @@ Page({
 
     console.log(app.globalData.BAIDU_OCR);
     console.log(app.globalData.BAIDU_ASR);
-
-
-    MT.translate("fuck!", "en", "zh");
   }
 })
