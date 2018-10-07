@@ -1,4 +1,5 @@
 import Tool from 'Tool.js'
+import OCR from '../../utils/OCR/OCR.js'
 
 const app = getApp();
 
@@ -16,7 +17,17 @@ Component({
 
   methods: {
     chooseImage: function (event) {
-      Tool.chooseImage();
+      const that = this;
+      Tool.chooseImage((res) => {
+        that.setData({
+          display: false,
+          image_path: res.path,
+          image_width: res.width + "px",
+          image_height: res.height + "px"
+        })
+
+        OCR.recognition('', res.path);
+      });
     },
 
     closeImage: function (event) {

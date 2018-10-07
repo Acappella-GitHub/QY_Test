@@ -1,9 +1,9 @@
 <view class="container">
   <icon class="iconfont icon-menu"></icon>
 
-  <!-- <ocr></ocr> -->
+  <ocr></ocr>
   <!-- <asr></asr> -->
-  <mt></mt>
+  <!-- <mt></mt> -->
 
   <view class="tab">
     <icon class="iconfont icon-ocr"></icon>

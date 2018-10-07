@@ -1,4 +1,4 @@
-function wxGetImageInfo(src, size) {
+function wxGetImageInfo(src, size, callback) {
   wx.getImageInfo({
     src,
     success: function (result) {
@@ -23,25 +23,26 @@ function wxGetImageInfo(src, size) {
             content: ' 图片的格式必须为 jpg、jpeg、png、bmp ',
             showCancel: false
           })
+          return;
           break;
       }
 
-      console.log(result.type);
+      callback(result);
     }
   })
 }
 
-function wxChooseImage() {
+function wxChooseImage(callback) {
   wx.chooseImage({
     count: 1,
     success: function (result) {
-      wxGetImageInfo(result.tempFiles[0].path, result.tempFiles[0].size);
+      wxGetImageInfo(result.tempFiles[0].path, result.tempFiles[0].size, callback);
     }
   })
 }
 
 export default class Tool {
-  static chooseImage() {
-    wxChooseImage();
+  static chooseImage(callback) {
+    wxChooseImage(callback);
   }
 }

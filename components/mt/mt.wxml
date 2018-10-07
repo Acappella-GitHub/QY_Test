@@ -1,6 +1,6 @@
 <view class="mt">
   <view class="menu">
-    <picker class="multi-selector" mode="multiSelector">英文 → 中文</picker>
+    <picker class="multi-selector" mode="multiSelector" range="{{multi_array}}" bindchange="bindMultiPickerChange">{{picker_text}}</picker>
     <button class="translate-button" size="mini" type="primary" catch:tap="translate">翻译</button>
   </view>
 
