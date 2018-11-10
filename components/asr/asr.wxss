@@ -1,34 +1,45 @@
 .asr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   height: calc(100% - 48px);
+  /* background: #555; */
 }
 
 .menu {
+  display: flex;
   width: 100%;
   height: 44px;
-  display: flex;
-  justify-content: center;
   background: #EFEFEF;
 }
 
-.selector {
+.multi-selector {
+  margin: 0 auto;
+  font-size: 14px;
   line-height: 44px;
 }
 
-.speech-box {
-  box-sizing: border-box;
-  margin: 5px 0 5px 0;
-  width: calc(100% - 10px);
-  height: calc(100% - 103px);
-
-  background: #EFEFEF;
+.translate-button {
+  align-self: center;
+  position: fixed;
+  right: 0;
+  margin: 0 5px;
 }
 
-.recording-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 90px;
+.text-box {
+  margin: 5px 0 0 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 88px);
+  /* background: #CCC; */
+}
+
+.result_text {
+  display: block;
+  margin: 0px auto;
+  width: 98%;
+  text-align: right;
+  /* background: #EEE; */
+}
+
+.record-btn {
+  margin: 5px 0 0 5px;
+  width: calc(100% - 10px);
 }

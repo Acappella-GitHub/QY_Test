@@ -1,23 +1,23 @@
 <view class="ocr">
   <view class="menu">
-    <picker class="multi-selector" mode="multiSelector">英文 → 中文</picker>
-    <button class="translate-button" size="mini" type="primary">翻译</button>
+    <picker class="multi-selector" mode="multiSelector" range="{{multi_array}}" bindchange="bindMultiPickerChange">{{picker_text}}</picker>
+    <button class="translate-button" size="mini" type="primary" catch:tap="translate">翻译</button>
   </view>
 
   <view class="image-box">
-    <icon wx:if="{{display}}" class="iconfont choose-image-icon" catch:tap="chooseImage"></icon>
-
-    <block wx:else>
-      <icon class="iconfont clear-image-icon" catch:tap="clearImage"></icon>
+    <block wx:if="{{display}}">
+      <icon class="iconfont close-image-icon" catch:tap="closeImage"></icon>
       <scroll-view class="scroll-view" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
         <image class="image" src="{{image_path}}" mode="top left" style="width:{{image_width}}; height:{{image_height}};"></image>
       </scroll-view>
     </block>
+
+    <icon wx:else class="iconfont choose-image-icon" catch:tap="chooseImage"></icon>
   </view>
 
   <view class="text-box">
     <scroll-view class="scroll-view" scroll-x="true" scroll-y="true" scroll-top="{{scroll_top}}" scroll-left="{{scroll_left}}" bind:touchstart="getCurrentTargetId" catch:scroll="syncRoll">
-      <text class="text">{{text_result}}</text>
+      <text wx:for="{{result_text}}" wx:key="index" class="result_text">{{item}}</text>
     </scroll-view>
   </view>
 </view>

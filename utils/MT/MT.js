@@ -36,6 +36,10 @@ function promise(source_language, target_language, original_text) {
 
 export default class MT {
   static translate(src_lang, dst_lang, original_text, callback) {
-    promise(src_lang, dst_lang, original_text).then(callback);
+    if (Object.prototype.toString.call(original_text) === "[object String]") {
+      promise(src_lang, dst_lang, original_text).then(callback);
+    } else if (Object.prototype.toString.call(original_text) === "[object Array]") {
+      Promise.all(original_text.map((val) => {return promise(src_lang, dst_lang, val)})).then(callback);
+    }
   }
 }

@@ -1,13 +1,13 @@
 <view class="container">
   <icon class="iconfont icon-menu"></icon>
 
-  <ocr></ocr>
-  <!-- <asr></asr> -->
-  <!-- <mt></mt> -->
+  <ocr wx:if="{{disp === 'ocr'}}"></ocr>
+  <asr wx:elif="{{disp === 'asr'}}"></asr>
+  <mt wx:else="{{disp === 'mt'}}"></mt>
 
   <view class="tab">
-    <icon class="iconfont icon-ocr"></icon>
-    <icon class="iconfont icon-asr"></icon>
-    <icon class="iconfont icon-mt"></icon>
+    <icon class="iconfont icon-ocr" data-name="ocr-tab" catch:tap="switch"></icon>
+    <icon class="iconfont icon-asr" data-name="asr-tab" catch:tap="switch"></icon>
+    <icon class="iconfont icon-mt" data-name="mt-tab" catch:tap="switch"></icon>
   </view>
 </view>

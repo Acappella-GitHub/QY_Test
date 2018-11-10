@@ -1,9 +1,9 @@
 const app = getApp();
 
 export default class OCR {
-  static recognition(olang, img_path) {
+  static recognition(olang, img_path, callback) {
     wx.request({
-      url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic',
+      url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/webimage',
       data: {
         access_token: app.globalData.BAIDU_OCR_TOKEN,
         language_type: olang,
@@ -13,7 +13,7 @@ export default class OCR {
       header: {'content-type': 'application/x-www-form-urlencoded'},
       method: 'POST',
       success: function(res) {
-        console.log(res);
+        callback(res.data.words_result.map((val) => {return val.words}));
       }
     })
   }

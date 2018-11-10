@@ -27,7 +27,7 @@
   margin: 5px 0 0 5px;
   width: calc(100% - 10px);
   height: calc((100% - 44px) / 2 - 7.5px);
-  background: #CCC;
+  background: #EFEFEF;
 }
 
 .choose-image-icon {
@@ -38,11 +38,11 @@
   height: 100%;
 }
 
-.clear-image-icon {
+.close-image-icon {
   display: flex;
   z-index: 1;
   position: fixed;
-  right: 10px;
+  right: 5px;
   border-radius: 50%;
 }
 
@@ -64,11 +64,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-clear-image-icon:before {
-
+.close-image-icon:before {
+  content: "\e671";
 }
 
 .choose-image-icon:before {
   content: "\e632";
   font-size: 192rpx;
+}
+
+.result_text {
+  -webkit-user-modify: read-write;
 }
